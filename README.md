@@ -10,37 +10,55 @@
 
 # xy-popover
 
-基于`React Hooks` + `typescript`的基础组件
+气泡卡片组件, 有可选标题和内容, 同`Tooltip`组件基本相同
 
 ## 安装
 
 ```bash
 # yarn
-yarn add xy-popover
+yarn add xy-popover xy-tooltip utils-dom utils-hooks classnames
 ```
 
 ## 使用例子
 
-```ts
+```tsx
 import React from "react";
 import ReactDOM from "react-dom";
-import XyPopover from "xy-popover";
-ReactDOM.render(<XyPopover />, container);
+import Popover from "xy-popover";
+ReactDOM.render(
+    <Popover title="标题" content="描述内容">
+        <button>按钮</button>
+    </Popover>,
+    container
+);
 ```
 
 ## API
 
-| 属性     | 说明                                                               | 类型           | 默认值    |
-| -------- | ------------------------------------------------------------------ | -------------- | --------- |
-| ghost    | 幽灵属性，使按钮背景透明                                           | boolean        | false     |
-| long     | 是否长按钮                                                         | boolean        | false     |
-| icon     | 设置按钮的图标类型                                                 | IconDefinition | -         |
-| loading  | 设置按钮载入状态                                                   | boolean        | `false`   |
-| disabled | 按钮失效状态                                                       | boolean        | `false`   |
-| shape    | 设置按钮形状，可选值为 `circle` 或者不设                           | string         | -         |
-| size     | 设置按钮大小，可选值为 `small` `large` 或者不设                    | string         | `default` |
-| type     | 设置按钮类型，可选值为 `primary` `dashed` `text` `danger` 或者不设 | string         | -         |
-| onClick  | `click` 事件的 handler                                             | function       | -         |
+| 属性             | 说明                     | 类型                       | 默认值    |
+| ---------------- | ------------------------ | -------------------------- | --------- |
+| visible          | 是否可视                 | boolean                    | 无        |
+| defaultVisible   | 默认是否可视             | boolean                    | 无        |
+| children         | 包裹元素                 | React.ReactNode            | 无        |
+| title            | 漂浮提示标题             | React.ReactNode            | 无        |
+| content          | 漂浮提示内容             | React.ReactNode            | 无        |
+| popupClassName   | 弹出内容类名             | string                     | 无        |
+| offsetSize       | 箭头偏移距离             | number                     | 13        |
+| placement        | 显示方向                 | PlacementType              | 无        |
+| onChange         | 改变是否可视事件         | (visible: boolean) => void | 无        |
+| trigger          | 触发方式                 | TriggerAction[]            | ['hover'] |
+| mouseDelay       | 鼠标事件判定延迟         | number                     | 300       |
+| stretch          | 是否宽度与目标宽度对齐   | boolean                    | 无        |
+| contentClickHide | 包裹元素点击是否触发隐藏 | boolean                    | true      |
+| alignOption      | 对齐选项                 | DomAlignOption             | 无        |
+
+### PlacementType
+
+> "left" | "right" | "top" | "bottom" | "leftTop" | "leftBottom" | "rightTop" | "rightBottom" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight"
+
+### TriggerAction
+
+> "hover" | "click" | "focus" | "contextMenu"
 
 ## 开发
 

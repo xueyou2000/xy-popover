@@ -1,11 +1,24 @@
 import React from "react";
-import { render } from "react-testing-library";
-import Component from "../src";
+import { render, fireEvent } from "react-testing-library";
+import Popover from "../src";
 
-describe("component", () => {
+describe("Popover", () => {
     test("render", () => {
-        const wrapper = render(<Component />);
-        const div = wrapper.getByText("Hello");
-        expect(div.textContent).toBe("Hello");
+        const container = document.createElement("div");
+        document.body.append(container);
+
+        const wrapper = render(
+            <Popover trigger={["click"]} content={<span>这是一个按钮</span>} getContainer={() => container}>
+                <button>按钮</button>
+            </Popover>,
+            { container }
+        );
+
+        const popover = container.querySelector(".xy-popover");
+        expect(popover.classList.contains("xy-popover-open")).toBeFalsy();
+        fireEvent.click(wrapper.getByText("按钮"));
+        expect(popover.classList.contains("xy-popover-open")).toBeTruthy();
+        fireEvent.click(wrapper.getByText("按钮"));
+        expect(popover.classList.contains("xy-popover-open")).toBeFalsy();
     });
 });

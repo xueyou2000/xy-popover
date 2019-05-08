@@ -1,7 +1,7 @@
 {
     "name": "xy-popover",
-    "version": "0.0.1",
-    "description": "基于 React Hooks 的按钮组件",
+    "version": "0.0.2",
+    "description": "基于 React Hooks 的气泡卡片组件",
     "types": "es/index.d.ts",
     "main": "es/index.js",
     "module": "es/index.js",
@@ -40,16 +40,23 @@
         "@types/node": "11.9.4",
         "@types/react": "16.8.2",
         "@types/react-dom": "16.8.2",
-        "react-testing-library": "^6.0.0",
         "quick-react-scripts": "1.1.7",
+        "react-testing-library": "^6.0.0",
+        "xy-checkbox": "^1.2.1",
         "xy-manual-tools": "0.1.2"
     },
     "dependencies": {
         "react": "^16.8.2",
-        "react-dom": "^16.8.2"
+        "react-dom": "^16.8.2",
+        "xy-tooltip": "0.1.2"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/xueyou2000/xy-popover.git"
+    },
+    "jest": {
+        "transformIgnorePatterns": [
+            "<rootDir>/node_modules/(?!(utils-hooks|utils-dom|xy-tooltip))"
+        ]
     }
 }
