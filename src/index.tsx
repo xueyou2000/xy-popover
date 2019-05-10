@@ -1,20 +1,25 @@
 import React from "react";
-import Tooltip from "xy-tooltip";
+import Trigger from "xy-trigger";
 import { PopoverProps } from "./interface";
 
 export function Popover(props: PopoverProps) {
-    const { prefixCls = "xy-popover", title, content, overlay, ...rest } = props;
+    const { prefixCls = "xy-popover", placement = "top", offsetSize = 13, title, content, popup, ...rest } = props;
 
     function renderPopover() {
         return (
             <React.Fragment>
-                {title && <div className={`${prefixCls}-title`}>{title}</div>}
-                <div className={`${prefixCls}-content`}>{content}</div>
+                <div className={`${prefixCls}-arrow`}>
+                    <div className={`${prefixCls}-arrow-inner`} />
+                </div>
+                <div className={`${prefixCls}-inner`}>
+                    {title && <div className={`${prefixCls}-title`}>{title}</div>}
+                    <div className={`${prefixCls}-content`}>{content}</div>
+                </div>
             </React.Fragment>
         );
     }
 
-    return <Tooltip {...rest} overlay={renderPopover()} offsetSize={13} prefixCls={prefixCls} />;
+    return <Trigger {...rest} placement={placement} popup={renderPopover()} offsetSize={offsetSize} prefixCls={prefixCls} />;
 }
 
 export default React.memo(Popover);

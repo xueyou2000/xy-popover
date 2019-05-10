@@ -10,13 +10,13 @@
 
 # xy-popover
 
-气泡卡片组件, 有可选标题和内容, 同`Tooltip`组件基本相同
+气泡卡片组件, 有可选标题和内容, 同`xy-trigger`和`xy-tooltip`组件基本相同
 
 ## 安装
 
 ```bash
 # yarn
-yarn add xy-popover xy-tooltip utils-dom utils-hooks classnames
+yarn add xy-popover xy-trigger utils-dom utils-hooks classnames
 ```
 
 ## 使用例子
@@ -35,22 +35,23 @@ ReactDOM.render(
 
 ## API
 
-| 属性             | 说明                     | 类型                       | 默认值    |
-| ---------------- | ------------------------ | -------------------------- | --------- |
-| visible          | 是否可视                 | boolean                    | 无        |
-| defaultVisible   | 默认是否可视             | boolean                    | 无        |
-| children         | 包裹元素                 | React.ReactNode            | 无        |
-| title            | 漂浮提示标题             | React.ReactNode            | 无        |
-| content          | 漂浮提示内容             | React.ReactNode            | 无        |
-| popupClassName   | 弹出内容类名             | string                     | 无        |
-| offsetSize       | 箭头偏移距离             | number                     | 13        |
-| placement        | 显示方向                 | PlacementType              | 无        |
-| onChange         | 改变是否可视事件         | (visible: boolean) => void | 无        |
-| trigger          | 触发方式                 | TriggerAction[]            | ['hover'] |
-| mouseDelay       | 鼠标事件判定延迟         | number                     | 300       |
-| stretch          | 是否宽度与目标宽度对齐   | boolean                    | 无        |
-| contentClickHide | 包裹元素点击是否触发隐藏 | boolean                    | true      |
-| alignOption      | 对齐选项                 | DomAlignOption             | 无        |
+| 属性               | 说明                   | 类型                       | 默认值    |
+| ------------------ | ---------------------- | -------------------------- | --------- |
+| title              | 漂浮提示标题           | React.ReactNode            | 无        |
+| content            | 漂浮提示内容           | React.ReactNode            | 无        |
+| visible            | 是否可视               | boolean                    | 无        |
+| defaultVisible     | 默认是否可视           | boolean                    | 无        |
+| children           | 包裹元素               | React.ReactNode            | 无        |
+| popupClassName     | 弹出内容类名           | string                     | 无        |
+| popupAlign         | 对齐选项               | DomAlignOption             | 无        |
+| offsetSize         | 偏移距离               | number                     | 6         |
+| destroyPopupOnHide | 是否隐藏时销毁         | boolean                    | false     |
+| placement          | 显示方向               | PlacementType              | 无        |
+| onChange           | 改变是否可视事件       | (visible: boolean) => void | 无        |
+| action             | 触发方式               | TriggerAction[]            | ['hover'] |
+| mouseDelay         | 鼠标事件判定延迟       | number                     | 300       |
+| stretch            | 是否宽度与目标宽度对齐 | boolean                    | 无        |
+| popupClickHide     | 包裹元素点击是否隐藏   | boolean                    | false     |
 
 ### PlacementType
 

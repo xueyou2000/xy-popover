@@ -1,6 +1,6 @@
-import { TooltipProps } from "xy-tooltip/es/interface";
+import { TriggerProps } from "xy-trigger/es/interface";
 
-export interface PopoverProps extends TooltipProps {
+export interface PopoverProps extends TriggerProps {
     /**
      * 附加类名
      */
