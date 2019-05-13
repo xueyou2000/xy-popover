@@ -57,7 +57,7 @@
     },
     "jest": {
         "transformIgnorePatterns": [
-            "<rootDir>/node_modules/(?!(utils-hooks|utils-dom|xy-tooltip|xy-trigger))"
+            "<rootDir>/node_modules/(?!(utils-hooks|utils-dom|xy-trigger))"
         ]
     }
 }

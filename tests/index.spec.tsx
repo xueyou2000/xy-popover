@@ -8,7 +8,7 @@ describe("Popover", () => {
         document.body.append(container);
 
         const wrapper = render(
-            <Popover trigger={["click"]} content={<span>这是一个按钮</span>} getContainer={() => container}>
+            <Popover action={["click"]} content={<span>这是一个按钮</span>} getContainer={() => container}>
                 <button>按钮</button>
             </Popover>,
             { container }
