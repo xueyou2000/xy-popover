@@ -16,7 +16,7 @@
 
 ```bash
 # yarn
-yarn add xy-popover xy-trigger utils-dom utils-hooks classnames
+yarn add xy-popover
 ```
 
 ## 使用例子
@@ -29,7 +29,7 @@ ReactDOM.render(
     <Popover title="标题" content="描述内容">
         <button>按钮</button>
     </Popover>,
-    container
+    container,
 );
 ```
 

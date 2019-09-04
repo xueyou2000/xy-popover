@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent } from "react-testing-library";
+import { render, fireEvent } from "@testing-library/react";
 import Popover from "../src";
 
 describe("Popover", () => {
@@ -11,7 +11,7 @@ describe("Popover", () => {
             <Popover action={["click"]} content={<span>这是一个按钮</span>} getContainer={() => container}>
                 <button>按钮</button>
             </Popover>,
-            { container }
+            { container },
         );
 
         const popover = container.querySelector(".xy-popover");

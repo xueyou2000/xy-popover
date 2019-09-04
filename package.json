@@ -1,6 +1,6 @@
 {
     "name": "xy-popover",
-    "version": "0.0.4",
+    "version": "0.0.41",
     "description": "基于 React Hooks 的气泡卡片组件",
     "types": "es/index.d.ts",
     "main": "es/index.js",
@@ -36,20 +36,20 @@
         "registry": "http://registry.npmjs.org/"
     },
     "devDependencies": {
-        "@types/jest": "24.0.6",
-        "@types/node": "11.9.4",
-        "@types/react": "16.8.2",
-        "@types/react-dom": "16.8.2",
-        "quick-react-scripts": "1.1.9",
-        "react-testing-library": "^6.0.0",
-        "xy-checkbox": "^1.2.1",
-        "xy-manual-tools": "0.1.4"
+        "@testing-library/react": "^9.1.4",
+        "@types/jest": "24.0.18",
+        "@types/node": "12.7.4",
+        "@types/react": "16.9.2",
+        "@types/react-dom": "16.9.0",
+        "quick-react-scripts": "^1.2.2",
+        "xy-checkbox": "^1.2.32",
+        "xy-manual-tools": "^0.1.65"
     },
     "dependencies": {
-        "react": "^16.8.2",
-        "react-dom": "^16.8.2",
-        "utils-hooks": "0.0.71",
-        "xy-trigger": "0.0.94"
+        "react": "^16.9.0",
+        "react-dom": "^16.9.0",
+        "utils-hooks": "^0.0.71",
+        "xy-trigger": "^0.0.94"
     },
     "repository": {
         "type": "git",
@@ -57,7 +57,7 @@
     },
     "jest": {
         "transformIgnorePatterns": [
-            "<rootDir>/node_modules/(?!(utils-hooks|utils-dom|xy-trigger))"
+            "<rootDir>/node_modules/(?!(utils-*|xy-trigger))"
         ]
     }
 }
