@@ -1,6 +1,6 @@
 {
     "name": "xy-popover",
-    "version": "0.0.41",
+    "version": "0.1.0",
     "description": "基于 React Hooks 的气泡卡片组件",
     "types": "es/index.d.ts",
     "main": "es/index.js",
@@ -42,12 +42,12 @@
         "@types/react": "16.9.2",
         "@types/react-dom": "16.9.0",
         "quick-react-scripts": "^1.2.2",
-        "xy-checkbox": "^1.2.32",
-        "xy-manual-tools": "^0.1.65"
+        "xy-checkbox": "^1.4.0",
+        "xy-manual-tools": "^0.3.0"
     },
     "dependencies": {
-        "react": "^16.9.0",
-        "react-dom": "^16.9.0",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
         "utils-hooks": "^0.0.71",
         "xy-trigger": "^0.0.94"
     },
